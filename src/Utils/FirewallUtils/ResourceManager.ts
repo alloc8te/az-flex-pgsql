@@ -102,7 +102,7 @@ export default class AzurePSQLResourceManager {
         const firewallRuleName = `ClientIPAddress_${Date.now()}`;
         const httpRequest: WebRequest = {
             method: 'PUT',
-            uri: this._restClient.getRequestUri(`/${this._resource!.id}/firewallRules/${firewallRuleName}`, {}, [], '2017-12-01'),
+            uri: this._restClient.getRequestUri(`/${this._resource!.id}/firewallRules/${firewallRuleName}`, {}, [], '2021-06-01'),
             body: JSON.stringify({
                 'properties': {
                     'startIpAddress': startIpAddress,
@@ -141,7 +141,7 @@ export default class AzurePSQLResourceManager {
     public async getFirewallRule(ruleName: string): Promise<FirewallRule> {
         const httpRequest: WebRequest = {
             method: 'GET',
-            uri: this._restClient.getRequestUri(`/${this._resource!.id}/firewallRules/${ruleName}`, {}, [], '2017-12-01')
+            uri: this._restClient.getRequestUri(`/${this._resource!.id}/firewallRules/${ruleName}`, {}, [], '2021-06-01')
         };
 
         try {
@@ -164,7 +164,7 @@ export default class AzurePSQLResourceManager {
     public async removeFirewallRule(firewallRule: FirewallRule): Promise<void> {
         const httpRequest: WebRequest = {
             method: 'DELETE',
-            uri: this._restClient.getRequestUri(`/${this._resource!.id}/firewallRules/${firewallRule.name}`, {}, [], '2017-12-01')
+            uri: this._restClient.getRequestUri(`/${this._resource!.id}/firewallRules/${firewallRule.name}`, {}, [], '2021-06-01')
         };
 
         try {
