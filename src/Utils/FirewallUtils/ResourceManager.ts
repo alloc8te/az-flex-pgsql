@@ -66,7 +66,7 @@ export default class AzurePSQLResourceManager {
         serverName = serverName.split('.')[0];
         const httpRequest: WebRequest = {
             method: 'GET',
-            uri: this._restClient.getRequestUri('//subscriptions/{subscriptionId}/providers/Microsoft.DBforPostgreSQL/flexibleServers', {}, [], '2017-12-01')
+            uri: this._restClient.getRequestUri('//subscriptions/{subscriptionId}/providers/Microsoft.DBforPostgreSQL/flexibleServers', {}, [], '2021-06-01')
         }
 
         core.debug(`Get PSQL server '${serverName}' details`);
